@@ -34,7 +34,7 @@ public:
     void acheter (Produit * prod);
     void afficherPanier();
     void livrerPanier();
-    
+	void afficher();
     
 private:
     

@@ -7,9 +7,9 @@ Client::Client(const string& nom, const string& prenom, int identifiant, const s
 	prenom_(prenom),
 	identifiant_(identifiant),
 	codePostal_(codePostal),
-	dateNaissance_(dateNaissance)
+	dateNaissance_(dateNaissance),
+	monPanier_(nullptr)
 {
-	monPanier_ = nullptr;
 }
 
 string Client::obtenirNom() const
@@ -65,13 +65,28 @@ void Client::modifierDateNaissance(long date)
 
 void Client::acheter(Produit* prod)
 {
-	
+	if (monPanier_ == nullptr)
+		monPanier_ = new Panier(4);
+	monPanier_->ajouter(prod);
 }
 
 void Client::afficherPanier()
 {
+	monPanier_->afficher();
 }
 
 void Client::livrerPanier()
 {
+	std::cout << "Nous avons le plaisir de vous annonce que votre livraison est complete, Merci pour vos achats." << std::endl;
+	
+}
+
+void Client::afficher()
+{
+	std::cout << "Nom: " << nom_ << " Prenom: " << prenom_ << " nee le: "<< dateNaissance_ << std::endl;
+	std::cout << "Identifiant: " << identifiant_ << "\nCodepostal: " << codePostal_ << std::endl;
+	if (monPanier_ == nullptr)
+		std::cout << "Vous n'avez encore rien dans votre panier" << std::endl;
+	else
+		monPanier_->afficher();
 }

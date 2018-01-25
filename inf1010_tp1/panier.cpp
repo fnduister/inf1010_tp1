@@ -39,12 +39,13 @@ void Panier::ajouter(Produit* prod)
 {
 	if (capaciteContenu_ == nombreContenu_)
 		doublerCapacite();
-	tousProduits_[nombreProduits_] = produit;
-	nombreProduits_++;
+	contenuPanier_[nombreContenu_] = prod;
+	nombreContenu_++;
 }
 
 void Panier::livrer()
 {
+
 }
 
 void Panier::afficher()

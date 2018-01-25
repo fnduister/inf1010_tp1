@@ -21,7 +21,6 @@ public:
     // méthodes de modification
     
     // autres méthodes
-	void doublerCapacite();
     void ajouter ( Produit * prod);
     void livrer();
     void afficher();
@@ -32,6 +31,10 @@ private:
     int  nombreContenu_;
     int capaciteContenu_;
     double totalAPayer_;
+
+	// autres methodes
+	void doublerCapacite();
+
 };
 
 #endif

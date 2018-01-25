@@ -61,10 +61,10 @@ int main()
 	nouveauRayon.afficher();
   
 	//7-  Creez un objet de classe client à l'aide du constructeur
-   
+	Client moi("allo","fabrice",1419733,"h2s2r2",29);
 
 	//8-  afficher l'etat des attributs du client
-   
+	moi.afficher();
 
 	//9-   Le client achete 9 produits
    
