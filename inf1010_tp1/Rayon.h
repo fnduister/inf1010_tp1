@@ -27,7 +27,7 @@ public:
 
 	// Methodes de modification
 	void modifierCategorie(string cat);
-	void doublerCapacite();
+	void augmenterCapacite();
     // autres methodes
     void ajouterProduit (Produit * produit);
     void afficher() const;

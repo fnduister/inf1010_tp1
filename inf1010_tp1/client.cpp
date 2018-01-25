@@ -2,54 +2,76 @@
 #include "client.h"
 
 
-inline string Client::obtenirNom()
+Client::Client(const string& nom, const string& prenom, int identifiant, const string& codePostal, long dateNaissance)
+	: nom_(nom),
+	prenom_(prenom),
+	identifiant_(identifiant),
+	codePostal_(codePostal),
+	dateNaissance_(dateNaissance)
+{
+	monPanier_ = nullptr;
+}
+
+string Client::obtenirNom() const
+{
+	return nom_;
+}
+
+string Client::obtenirPrenom() const
+{
+	return prenom_;
+}
+
+int Client::obtenirIdentifiant() const
+{
+	return identifiant_;
+}
+
+string Client::obtenirCodePostal() const
+{
+	return codePostal_;
+}
+
+long Client::obtenirDateNaissance() const
+{
+	return dateNaissance_;
+}
+
+void Client::modifierNom(string nom)
+{
+	nom_ = nom;
+}
+
+void Client::modifierPrenom(string prenom)
+{
+	prenom_ = prenom;
+}
+
+void Client::modifierIdentifiant(int identifiant)
+{
+	identifiant_ = identifiant;
+}
+
+void Client::modifierCodePostal(string codePostal)
+{
+	codePostal_ = codePostal;
+}
+
+void Client::modifierDateNaissance(long date)
+{
+	dateNaissance_ = date;
+}
+
+
+void Client::acheter(Produit* prod)
+{
+	
+}
+
+void Client::afficherPanier()
 {
 }
 
-inline string Client::obtenirPrenom()
-{
-}
-
-inline int Client::obtenirIdentifiant()
-{
-}
-
-inline string Client::obtenirCodePostal()
-{
-}
-
-inline long Client::obtenirDateNaissance()
-{
-}
-
-inline void Client::modifierNom(string nom)
-{
-}
-
-inline void Client::modifierPrenom(string prenom)
-{
-}
-
-inline void Client::modifierIdentifiant(int identifiant)
-{
-}
-
-inline void Client::modifierCodePostal(string codePostal)
-{
-}
-
-inline void Client::modifierDateNaissance(long date)
-{
-}
-
-inline void Client::acheter(Produit* prod)
-{
-}
-
-inline void Client::afficherPanier()
-{
-}
-
-inline void Client::livrerPanier()
+void Client::livrerPanier()
 {
 }

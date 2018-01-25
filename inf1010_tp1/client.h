@@ -14,12 +14,14 @@ class Client
 public:
 
 	// methodes d'acces
-    
-    string obtenirNom() ;
-    string obtenirPrenom() ;
-    int obtenirIdentifiant() ;
-    string obtenirCodePostal() ;
-    long obtenirDateNaissance() ;
+
+	Client(const string& nom, const string& prenom, int identifiant, const string& codePostal, long dateNaissance);
+
+    string obtenirNom() const;
+    string obtenirPrenom() const;
+    int obtenirIdentifiant() const;
+    string obtenirCodePostal() const;
+    long obtenirDateNaissance() const;
     
     // methodes de modification
     void modifierNom(string nom) ;

@@ -27,7 +27,7 @@ void Rayon::modifierCategorie(string cat)
 	categorie_ = cat;
 }
 
-void Rayon::doublerCapacite()
+void Rayon::augmenterCapacite()
 {
 	if (capaciteProduits_ < 1) {
 		capaciteProduits_ = 5;
@@ -50,7 +50,7 @@ void Rayon::doublerCapacite()
 void Rayon::ajouterProduit(Produit* produit)
 {
 	if (capaciteProduits_ == nombreProduits_)
-		doublerCapacite();
+		augmenterCapacite();
 	tousProduits_[nombreProduits_] = produit;
 	nombreProduits_++;
 }

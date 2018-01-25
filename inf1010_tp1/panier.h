@@ -14,13 +14,14 @@ class Panier
 public:
     Panier (int capacite);
     // methodes d'accès
-    Produit **  obtenirContenuPanier();
-    int obtenirNombreContenu();
-    double obtenirTotalApayer();
+    Produit **  obtenirContenuPanier() const;
+    int obtenirNombreContenu() const;
+    double obtenirTotalApayer() const;
     
     // méthodes de modification
     
     // autres méthodes
+	void doublerCapacite();
     void ajouter ( Produit * prod);
     void livrer();
     void afficher();

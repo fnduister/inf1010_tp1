@@ -157,6 +157,7 @@
   <ItemGroup>
     <ClCompile Include="client.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="panier.cpp" />
     <ClCompile Include="Produit.cpp" />
     <ClCompile Include="Rayon.cpp" />
     <ClCompile Include="stdafx.cpp">
