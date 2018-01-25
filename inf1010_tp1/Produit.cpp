@@ -46,5 +46,5 @@ void Produit::afficher() const
 {
 	std::cout << "Nom: " << obtenirNom() << std::endl;
 	std::cout << "Numero de reference: " << obtenirReference() << std::endl;
-	std::cout << "Prix: " << obtenirPrix() << std::endl;
+	std::cout << "Prix: " << obtenirPrix() << "$"<< std::endl;
 }

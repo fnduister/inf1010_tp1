@@ -27,10 +27,10 @@ public:
 
 	// Methodes de modification
 	void modifierCategorie(string cat);
-    
+	void doublerCapacite();
     // autres methodes
     void ajouterProduit (Produit * produit);
-    void afficher();
+    void afficher() const;
 	
 
 private:

@@ -27,12 +27,42 @@ void Rayon::modifierCategorie(string cat)
 	categorie_ = cat;
 }
 
-void Rayon::ajouterProduit(Produit* produit)
+void Rayon::doublerCapacite()
 {
+	if (capaciteProduits_ < 1) {
+		capaciteProduits_ = 5;
+		tousProduits_ = new Produit*[capaciteProduits_];
+	}
+	else {
+		capaciteProduits_ += 5;
+
+		Produit** produits = new Produit*[capaciteProduits_];
+
+		for (unsigned i = 0; i < nombreProduits_; ++i)
+		{
+			produits[i] = tousProduits_[i];
+		}
+
+		tousProduits_ = produits;
+	}
 }
 
-void Rayon::afficher()
+void Rayon::ajouterProduit(Produit* produit)
 {
+	if (capaciteProduits_ == nombreProduits_)
+		doublerCapacite();
+	tousProduits_[nombreProduits_] = produit;
+	nombreProduits_++;
+}
+
+void Rayon::afficher() const
+{
+	std::cout << "liste des produits:" << std::endl;
+
+	for (unsigned i = 0; i < nombreProduits_; ++i) {
+		tousProduits_[i]->afficher();
+		std::cout << "--------------" << std:: endl;
+	}
 }
 
 string Rayon::obtenirCategorie() const

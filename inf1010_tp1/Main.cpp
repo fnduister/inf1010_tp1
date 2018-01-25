@@ -33,15 +33,32 @@ int main()
 
 	
 	//3-  Creez un objet de la classe rayon à l'aide du constructeur par défaut
-
+	Rayon nouveauRayon;
    
 	//4-  Modifiez la catégorie  du rayon
+	nouveauRayon.modifierCategorie("nouvelle categorie");
    
     // 5- Ajouter 6 produits de  voret chaoix dans le rayon créé
-    
+	Produit amande("amande", 456, 12.5);
+	nouveauRayon.ajouterProduit(&amande);
+
+	Produit audi("audi", 658, 32658.2);
+	nouveauRayon.ajouterProduit(&audi);
+
+	Produit poly("poly", 6589, 12365.5);
+	nouveauRayon.ajouterProduit(&poly);
+
+	Produit mayo("mayo", 69854, 125.5);
+	nouveauRayon.ajouterProduit(&mayo);
+
+	Produit videotron("internet", 69, 12898.5);
+	nouveauRayon.ajouterProduit(&videotron);
+
+	Produit hydro("courant", 589, 1232.5);
+	nouveauRayon.ajouterProduit(&hydro);
 
     // 6- afficher le contenu du rayon
-   
+	nouveauRayon.afficher();
   
 	//7-  Creez un objet de classe client à l'aide du constructeur
    
