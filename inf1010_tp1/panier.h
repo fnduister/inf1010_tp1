@@ -16,7 +16,7 @@ public:
     // methodes d'accès
     Produit **  obtenirContenuPanier() const;
     int obtenirNombreContenu() const;
-    double obtenirTotalApayer() const;
+    double obtenirTotalApayer();
     
     // méthodes de modification
     

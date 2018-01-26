@@ -67,14 +67,24 @@ int main()
 	moi.afficher();
 
 	//9-   Le client achete 9 produits
-   
+	moi.acheter(&mayo);
+	moi.acheter(&videotron);
+	moi.acheter(&hydro);
+	moi.acheter(&audi);
+	moi.acheter(&amande);
+	moi.acheter(&hydro);
+	moi.acheter(&videotron);
+	moi.acheter(&amande);
+	moi.acheter(&mayo);
 
 	//10- Afficher le contenu du panier du client
+	moi.afficherPanier();
 
      //11- livrer le panier du client
-   
-    
+	moi.livrerPanier();
+
 	//12- afficher le contenu du panier du client
+	moi.afficherPanier();
     
 	//13-  terminer le programme correctement
     

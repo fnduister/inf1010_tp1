@@ -70,21 +70,24 @@ void Client::acheter(Produit* prod)
 	monPanier_->ajouter(prod);
 }
 
-void Client::afficherPanier()
+void Client::afficherPanier() const
 {
-	monPanier_->afficher();
+	if (monPanier_->obtenirContenuPanier() == nullptr)
+		std::cout << "Vous n'avez encore rien dans votre panier" << std::endl;
+	else 
+		monPanier_->afficher();
 }
 
-void Client::livrerPanier()
+void Client::livrerPanier() const
 {
 	std::cout << "Nous avons le plaisir de vous annonce que votre livraison est complete, Merci pour vos achats." << std::endl;
-	
+	monPanier_->livrer();
 }
 
 void Client::afficher()
 {
-	std::cout << "Nom: " << nom_ << " Prenom: " << prenom_ << " nee le: "<< dateNaissance_ << std::endl;
-	std::cout << "Identifiant: " << identifiant_ << "\nCodepostal: " << codePostal_ << std::endl;
+	std::cout <<nom_ << " " << prenom_ << " nee le: "<< dateNaissance_ << std::endl;
+	std::cout << "Identifiant: " << identifiant_ << "\nCode-postal: " << codePostal_ << std::endl << std::endl;
 	if (monPanier_ == nullptr)
 		std::cout << "Vous n'avez encore rien dans votre panier" << std::endl;
 	else

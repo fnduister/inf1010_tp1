@@ -16,8 +16,13 @@ int Panier::obtenirNombreContenu() const
 	return nombreContenu_;
 }
 
-double Panier::obtenirTotalApayer() const
+double Panier::obtenirTotalApayer()
 {
+	if(nombreContenu_ != 0)
+		for (int i = 0; i < nombreContenu_; ++i)
+		{
+			totalAPayer_ += contenuPanier_[i]->obtenirPrix();
+		}
 	return totalAPayer_;
 }
 
@@ -45,9 +50,18 @@ void Panier::ajouter(Produit* prod)
 
 void Panier::livrer()
 {
-
+	delete[] contenuPanier_;
+	contenuPanier_ = nullptr;
+	nombreContenu_ = capaciteContenu_ = totalAPayer_ = 0;
 }
 
 void Panier::afficher()
 {
+	std::cout << "\nLe prix total de votre panier est: " << obtenirTotalApayer() << " $\n" << std::endl;
+	for (int i = 0; i < nombreContenu_; ++i)
+	{
+		std::cout << "Produit numero " << i + 1<< std::endl;
+		contenuPanier_[i]->afficher();
+		std::cout << std::endl;
+	}
 }
