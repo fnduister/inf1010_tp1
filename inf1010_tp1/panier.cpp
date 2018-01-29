@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "panier.h"
 
+//TODO: je dois trouver comment ajouter un constructeur dans un autre constructeur
+
 Panier::Panier(int capacite): nombreContenu_(0), capaciteContenu_(capacite), totalAPayer_(0)
 {
 	contenuPanier_ = new Produit*[capaciteContenu_];
