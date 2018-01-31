@@ -15,21 +15,35 @@ class Rayon
 {
 public:
 	// Constructeurs par defaut et par parametres
-    Rayon();
-	Rayon(string cat);
-   
-	// Methodes d'acces
+	Rayon();
+	Rayon(const string& cat);
+
+	//Retourne la categorie du rayon
 	string obtenirCategorie() const;
+
+	//Retourne un tableau de pointeur des produits du rayon
 	Produit ** obtenirTousProduits() const;
-    int obtenirCapaciteProduits() const;
-    int obtenirNombreProduits() const;
-	
+
+	//Retourne la capacité du tableau de pointeur
+	int obtenirCapaciteProduits() const;
+
+	//Retourne le nombre de produits contenus dans le rayon
+	int obtenirNombreProduits() const;
+
 
 	// Methodes de modification
-	void modifierCategorie(string cat);
+	void modifierCategorie(const string& cat);
+
+	//augmente de 5 la capacité du rayon
+	//Initialise à 5 la capacité du tableau si elle est vide
+	//Désalloue le contenu du tableau une fois copie
 	void augmenterCapacite();
-    // autres methodes
+
+	//Ajoute un produit au rayon
+	//Augmente la taille du tableau de pointeur si la capacité totale est atteinte
     void ajouterProduit (Produit * produit);
+
+	//Affiche le contenu du rayon
     void afficher() const;
 	
 

@@ -9,7 +9,7 @@ Rayon::Rayon():
 {
 }
 
-Rayon::Rayon(string cat):
+Rayon::Rayon(const string& cat):
 	categorie_(cat),
 	tousProduits_(nullptr),
 	capaciteProduits_(0),
@@ -22,7 +22,7 @@ int Rayon::obtenirNombreProduits() const
 	return nombreProduits_;
 }
 
-void Rayon::modifierCategorie(string cat)
+void Rayon::modifierCategorie(const string& cat)
 {
 	categorie_ = cat;
 }
@@ -38,11 +38,11 @@ void Rayon::augmenterCapacite()
 
 		Produit** produits = new Produit*[capaciteProduits_];
 
-		for (unsigned i = 0; i < nombreProduits_; ++i)
+		for (int i = 0; i < nombreProduits_; ++i)
 		{
 			produits[i] = tousProduits_[i];
 		}
-
+		delete [] tousProduits_;
 		tousProduits_ = produits;
 	}
 }
@@ -59,7 +59,7 @@ void Rayon::afficher() const
 {
 	std::cout << "liste des produits:" << std::endl;
 
-	for (unsigned i = 0; i < nombreProduits_; ++i) {
+	for (int i = 0; i < nombreProduits_; ++i) {
 		tousProduits_[i]->afficher();
 		std::cout << "--------------" << std:: endl;
 	}

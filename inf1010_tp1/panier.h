@@ -13,16 +13,29 @@ class Panier
 {
 public:
     Panier (int capacite);
-    // methodes d'accès
+	//méthodes d'acces
+
+	~Panier();
+
+	//Retourne un pointeur contenant les pointeurs des produits dans le panier
     Produit **  obtenirContenuPanier() const;
+
+	//Retourne le nombre de produit dans le panier
     int obtenirNombreContenu() const;
+
+	//Retourne le montant total à payer dans le panier
+	//Retourne 0 si le panier est vide
     double obtenirTotalApayer();
     
     // méthodes de modification
     
-    // autres méthodes
-    void ajouter ( Produit * prod);
+	//Ajoute un produit dans le panier
+    void ajouter (Produit * prod);
+
+	//Désalloue le tableau du panier et initialise les autre paramétres 
     void livrer();
+
+	//Afficher le contenu du panier
     void afficher();
 
 private:
@@ -33,6 +46,9 @@ private:
     double totalAPayer_;
 
 	// autres methodes
+
+	// double la capacite du tableau de produit
+	// Initialise a 2 la capacite 
 	void doublerCapacite();
 
 };

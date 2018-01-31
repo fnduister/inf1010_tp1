@@ -8,6 +8,11 @@ Panier::Panier(int capacite): nombreContenu_(0), capaciteContenu_(capacite), tot
 	contenuPanier_ = new Produit*[capaciteContenu_];
 }
 
+Panier::~Panier()
+{
+	delete [] contenuPanier_;
+}
+
 Produit** Panier::obtenirContenuPanier() const
 {
 	return contenuPanier_;
@@ -34,10 +39,11 @@ void Panier::doublerCapacite()
 
 	Produit** produits = new Produit*[capaciteContenu_];
 
-	for (unsigned i = 0; i < nombreContenu_; ++i)
+	for (int i = 0; i < nombreContenu_; ++i)
 	{
 		produits[i] = contenuPanier_[i];
 	}
+
 	delete[] contenuPanier_;
 	contenuPanier_ = produits;
 }
@@ -54,7 +60,7 @@ void Panier::livrer()
 {
 	delete[] contenuPanier_;
 	contenuPanier_ = nullptr;
-	nombreContenu_ = capaciteContenu_ = totalAPayer_ = 0;
+	nombreContenu_ = 0; totalAPayer_ = 0;
 }
 
 void Panier::afficher()

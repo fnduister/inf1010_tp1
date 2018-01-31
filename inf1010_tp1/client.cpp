@@ -12,11 +12,17 @@ Client::Client(const string& nom, const string& prenom, int identifiant, const s
 {
 }
 
+Client::~Client()
+{
+	delete [] monPanier_;
+	monPanier_ = nullptr;
+}
+
 string Client::obtenirNom() const
 {
 	return nom_;
 }
-
+ 
 string Client::obtenirPrenom() const
 {
 	return prenom_;
@@ -84,7 +90,7 @@ void Client::livrerPanier() const
 	monPanier_->livrer();
 }
 
-void Client::afficher()
+void Client::afficher() const
 {
 	std::cout <<nom_ << " " << prenom_ << " nee le: "<< dateNaissance_ << std::endl;
 	std::cout << "Identifiant: " << identifiant_ << "\nCode-postal: " << codePostal_ << std::endl << std::endl;
