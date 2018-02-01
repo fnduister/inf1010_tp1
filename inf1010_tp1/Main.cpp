@@ -9,7 +9,6 @@
 #include "Produit.h"
 #include "Rayon.h"
 #include "client.h"
-#include "panier.h"
 #include <string>
 #include <iostream>
 

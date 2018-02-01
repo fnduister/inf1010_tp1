@@ -15,7 +15,7 @@ public:
     Panier (int capacite);
 	//méthodes d'acces
 
-	//Retourne un pointeur contenant les pointeurs des produits dans le panier
+	//Retourne un tableau de pointeur contenant les pointeurs des produits dans le panier
     Produit **  obtenirContenuPanier() const;
 
 	//Retourne le nombre de produit dans le panier
