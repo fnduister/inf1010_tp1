@@ -30,6 +30,7 @@ int main()
 	produits[2].modifierPrix(13.8);
 
 	produits[2].afficher();
+	std::cout << std::endl;
 
 	
 	//3-  Creez un objet de la classe rayon à l'aide du constructeur par défaut
@@ -65,6 +66,8 @@ int main()
 
 	//8-  afficher l'etat des attributs du client
 	moi.afficher();
+
+	std::cout << std::endl;
 
 	//9-   Le client achete 9 produits
 	moi.acheter(&mayo);

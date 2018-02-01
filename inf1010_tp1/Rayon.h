@@ -18,6 +18,10 @@ public:
 	Rayon();
 	Rayon(const string& cat);
 
+	// désalloue chaque produit dans la table
+	// désalloue la table 
+	~Rayon();
+
 	//Retourne la categorie du rayon
 	string obtenirCategorie() const;
 

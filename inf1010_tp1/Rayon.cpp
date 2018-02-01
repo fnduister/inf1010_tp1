@@ -61,7 +61,7 @@ void Rayon::afficher() const
 
 	for (int i = 0; i < nombreProduits_; ++i) {
 		tousProduits_[i]->afficher();
-		std::cout << "--------------" << std:: endl;
+		std::cout << std::endl;
 	}
 }
 
@@ -78,4 +78,13 @@ Produit ** Rayon::obtenirTousProduits() const
 int Rayon::obtenirCapaciteProduits() const
 {
 	return capaciteProduits_;
+}
+
+Rayon::~Rayon()
+{
+	for (int i = 0; i < nombreProduits_; ++i)
+	{
+		delete tousProduits_[i];
+	}
+	delete[] tousProduits_;
 }

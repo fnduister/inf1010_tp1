@@ -27,24 +27,27 @@ double Produit::obtenirPrix() const
 	return prix_;
 }
 
-void Produit::modifierNom(string nom)
+
+void Produit::modifierNom(const string& nom)
 {
 	nom_ = nom;
 }
 
-void Produit::modifierReference(int reference)
+void Produit::modifierReference(const int& reference)
 {
 	reference_ = reference;
 }
 
-void Produit::modifierPrix(double prix)
+void Produit::modifierPrix(const double& prix)
 {
 	prix_ = prix;
 }
 
 void Produit::afficher() const
 {
+	std::cout << "************************" << std::endl;
 	std::cout << "Nom: " << obtenirNom() << std::endl;
 	std::cout << "Numero de reference: " << obtenirReference() << std::endl;
 	std::cout << "Prix: " << obtenirPrix() << "$"<< std::endl;
+	std::cout << "************************" << std::endl;
 }

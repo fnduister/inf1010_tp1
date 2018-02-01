@@ -18,15 +18,18 @@ public:
 	Produit();
 	Produit(string nom, int reference, double prix);
 
-	// Methodes d'acces
+	// Retourne le nom du produit
 	string obtenirNom() const;
+
+	// Retourne la reference du produit
 	int obtenirReference() const;
+
+	// Retourne le prix du produit
 	double obtenirPrix() const;
 
-	// Methodes de modification
-	void modifierNom(string nom);
-	void modifierReference(int reference);
-	void modifierPrix(double prix);
+	void modifierNom(const string& nom);
+	void modifierReference(const int& reference);
+	void modifierPrix(const double& prix);
    
     // autres methodes
     void afficher() const;

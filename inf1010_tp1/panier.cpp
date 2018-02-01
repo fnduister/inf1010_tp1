@@ -68,6 +68,7 @@ void Panier::afficher()
 	std::cout << "\nLe prix total de votre panier est: " << obtenirTotalApayer() << " $\n" << std::endl;
 	for (int i = 0; i < nombreContenu_; ++i)
 	{
+		std::cout << "------------------------" << std::endl;
 		std::cout << "Produit numero " << i + 1<< std::endl;
 		contenuPanier_[i]->afficher();
 		std::cout << std::endl;
