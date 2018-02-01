@@ -20,7 +20,7 @@ int main()
 	//C'est à vous de voir si vous devez allouer dynamiquement ou non les élèments
 
 	//1-  Creez 15 objets du classe produit
-	Produit* produits = new Produit[15];
+	Produit produits[15];
 
 
 	//2-  Modifiez le nom, la référence, le prix de  troisieme objet Produit créé
@@ -31,8 +31,6 @@ int main()
 
 	produits[2].afficher();
 	std::cout << std::endl;
-
-	delete[] produits;
 	
 	//3-  Creez un objet de la classe rayon à l'aide du constructeur par défaut
 	Rayon nouveauRayon;

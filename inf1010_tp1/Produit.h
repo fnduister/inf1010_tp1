@@ -14,8 +14,10 @@ using namespace std;
 class Produit
 {
 public:
-	// Constructeurs par defaut et par parametres
+	// Constructeurs par defaut
 	Produit();
+
+	// Constructeurs et par parametres
 	Produit(string nom, int reference, double prix);
 
 	// Retourne le nom du produit
@@ -31,7 +33,9 @@ public:
 	void modifierReference(const int& reference);
 	void modifierPrix(const double& prix);
    
-    // autres methodes
+    /// autres methodes
+
+	// Afficher les informations du produit
     void afficher() const;
    
 private:
