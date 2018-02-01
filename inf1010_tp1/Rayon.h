@@ -14,12 +14,19 @@ using namespace std;
 class Rayon
 {
 public:
-	// Constructeurs par defaut et par parametres
+	/**
+	*   @brief  Default constructor.
+	*   @return void
+	*/
 	Rayon();
-	Rayon(const string& cat);
 
-	// désalloue chaque produit dans la table
-	// désalloue la table 
+	explicit Rayon(const string& cat);
+
+	/**
+	*   @brief  désalloue chaque produit dans le rayon.
+	*			désalloue le tableau du rayon
+	*   @return void
+	*/
 	~Rayon();
 
 	//Retourne la categorie du rayon
@@ -58,6 +65,6 @@ private:
     Produit ** tousProduits_;
     int capaciteProduits_;
 	int nombreProduits_;
-
+	const int capaciteRayonParDefaut_ = 5;
 };
 #endif

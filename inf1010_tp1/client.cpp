@@ -14,7 +14,7 @@ Client::Client(const string& nom, const string& prenom, int identifiant, const s
 
 Client::~Client()
 {
-	delete [] monPanier_;
+	delete monPanier_;
 	monPanier_ = nullptr;
 }
 
@@ -72,7 +72,7 @@ void Client::modifierDateNaissance(long date)
 void Client::acheter(Produit* prod)
 {
 	if (monPanier_ == nullptr)
-		monPanier_ = new Panier(4);
+		monPanier_ = new Panier(capacitePanierParDefaut_);
 	monPanier_->ajouter(prod);
 }
 

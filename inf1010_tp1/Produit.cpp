@@ -3,10 +3,8 @@
 #include "iomanip"
 #include "string"
 
-Produit::Produit()
+Produit::Produit():Produit("outil",0,0)
 {
-	nom_ = "outil";
-	reference_ = prix_ = 0;
 }
 
 Produit::Produit(string nom, int reference, double prix):

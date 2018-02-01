@@ -2,10 +2,7 @@
 #include "Rayon.h"
 
 Rayon::Rayon():
-	categorie_("inconnu"),
-	tousProduits_(nullptr),
-	capaciteProduits_(0),
-	nombreProduits_(0)
+	Rayon("inconnu")
 {
 }
 
@@ -34,7 +31,7 @@ void Rayon::augmenterCapacite()
 		tousProduits_ = new Produit*[capaciteProduits_];
 	}
 	else {
-		capaciteProduits_ += 5;
+		capaciteProduits_ += capaciteRayonParDefaut_;
 
 		Produit** produits = new Produit*[capaciteProduits_];
 
@@ -51,8 +48,7 @@ void Rayon::ajouterProduit(Produit* produit)
 {
 	if (capaciteProduits_ == nombreProduits_)
 		augmenterCapacite();
-	tousProduits_[nombreProduits_] = produit;
-	nombreProduits_++;
+	tousProduits_[nombreProduits_++] = produit;
 }
 
 void Rayon::afficher() const
@@ -82,9 +78,5 @@ int Rayon::obtenirCapaciteProduits() const
 
 Rayon::~Rayon()
 {
-	for (int i = 0; i < nombreProduits_; ++i)
-	{
-		delete tousProduits_[i];
-	}
 	delete[] tousProduits_;
 }

@@ -15,8 +15,6 @@ public:
     Panier (int capacite);
 	//méthodes d'acces
 
-	~Panier();
-
 	//Retourne un pointeur contenant les pointeurs des produits dans le panier
     Produit **  obtenirContenuPanier() const;
 

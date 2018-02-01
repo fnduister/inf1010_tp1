@@ -16,33 +16,44 @@ public:
 	// methodes d'acces
 
 	Client(const string& nom, const string& prenom, int identifiant, const string& codePostal, long dateNaissance);
+
 	~Client();
+
 	//Retourne nom du client
-    string obtenirNom() const;
+	string obtenirNom() const;
 
 	//Retourne prenom du client
-    string obtenirPrenom() const;
+	string obtenirPrenom() const;
 
 	//Retourne l'id du client
-    int obtenirIdentifiant() const;
+	int obtenirIdentifiant() const;
 
 	//Retourne le code postal
-    string obtenirCodePostal() const;
+	string obtenirCodePostal() const;
 
 	//Retourne la date de naissaince
-    long obtenirDateNaissance() const;
-    
+	long obtenirDateNaissance() const;
+
 	//Modifie l'attribut avec la valeur passer en parametre
-    void modifierNom(string nom) ;
-    void modifierPrenom(string prenom) ;
-    void modifierIdentifiant(int identifiant) ;
-    void modifierCodePostal(string codePostal);
-    void modifierDateNaissance(long date);
-    
-    // autres méthodes
-    void acheter (Produit * prod);
+	void modifierNom(string nom);
+	void modifierPrenom(string prenom);
+	void modifierIdentifiant(int identifiant);
+	void modifierCodePostal(string codePostal);
+	void modifierDateNaissance(long date);
+
+	/// autres méthodes
+
+	//Ajoute un produit dans le panier du client
+	//Cree un panier si inexistant
+	void acheter(Produit * prod);
+
+    //Afficher le contenu du panier
     void afficherPanier() const;
+
+	//Appelle la fonction livrer de la classe panier
     void livrerPanier() const;
+
+	//afficher les information du client
 	void afficher() const;
     
 private:
@@ -53,6 +64,7 @@ private:
     string codePostal_;
     long dateNaissance_;
     Panier * monPanier_;
+	const int capacitePanierParDefaut_ = 4;
 };
 
 
